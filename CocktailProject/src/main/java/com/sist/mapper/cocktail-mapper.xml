@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sist.mapper.cocktail-mapper">
+<!-- 메인 칵테일 -->
+<select id="cocktailMainHouseData" resultType="CocktailVO">
+  SELECT * FROM (SELECT * FORM cocktail
+    ORDER BY DBMS_RANDOM.RANDOM
+  )
+  WHERE rownum&lt;=1
+</select>
+<select id="cocktailMainHouseData8" resultType="CocktailVO">
+    SELECT * FROM (SELECT * FROM cocktail
+      ORDER BY DBMS_RANDOM.RANDOM
+    )
+    WHERE rownum&lt;=8
+  </select>
+</mapper>

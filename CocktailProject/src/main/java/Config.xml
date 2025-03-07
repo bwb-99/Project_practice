@@ -1,1 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+ "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<!--  데이터베이스 Connection : getConnection / disConnection -->
+<configuration>
+	<properties resource="db.properties"/>
+	
+<typeAliases>
+  <typeAlias  type="com.sist.vo.CocktailVO" alias="CocktailVO"/>
+  <typeAlias  type="com.sist.vo.CocktailbarVO" alias="CocktailbarVO"/>
+  <typeAlias  type="com.sist.vo.Cocktail_productVO" alias="Cocktail_productVO"/>
+  <typeAlias  type="com.sist.vo.Cocktail_memberVO" alias="Cocktail_memberVO"/>
+</typeAliases>
+<environments default="development">
+  <environment id="development">
+   <transactionManager type="JDBC"/>
+    <dataSource type="POOLED">
+      <property name="dirver" value="${driver"/>
+      <property name="url" value="${url}"/>
+      <property name="username" value="${password}"/>
+     
+    </dataSource>
+  </environment>
+</environments>
+<!-- SQL -->
+<mappers>
+ <mapper resource="com/sist/mapper/cocktail-mapper.xml"/>
+
+</mappers>
+</configuration>
